@@ -16,7 +16,7 @@ This service adheres to the [GitFlow](https://nvie.com/posts/a-successful-git-br
 
 ### Branch Characteristics
 
-#### `main`: 
+#### `main`:
 
 - code in production-ready state
 - no direct commits
@@ -33,7 +33,7 @@ This service adheres to the [GitFlow](https://nvie.com/posts/a-successful-git-br
   - takes in changes from `feature` and `release` branches
   - merge into `main` once changes are stable and ready to be packaged into a new release
 
-#### `feature/*`: 
+#### `feature/`*:
 
 - development of new features for future releases
 - exists as long as the feature is in development
@@ -68,5 +68,5 @@ This service adheres to the [GitFlow](https://nvie.com/posts/a-successful-git-br
 
 ### Branch Protection
 
-
+`main` and `develop` are protected to block branch deletion, prevent direct pushes and ensure that all merges are handled via pull requests. `main` additionally requires contributor approval on merges from pull requests. 
 
