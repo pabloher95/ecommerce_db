@@ -4,6 +4,11 @@
 
 PostgreSQL schema for the e-commerce platform, providing tables, seed data and init scripts. Used by the `product-service` and `order-service` services. 
 
+The schema creates two tables: 
+
+- `products`: product catalog (id, name, price, description) 
+- `orders`: orders with product reference and status 
+
 ## Prerequisites
 
 - PostgreSQL 14+
@@ -32,7 +37,7 @@ Use env.example to configure environment variables, making sure to change defaul
 
 ## Contributions
 
-As per GitFlow standards (see docs/git_flow.md for details):
+As per GitFlow standards (see [docs/git_flow.md](docs/git_flow.md) for details):
 
 - `main` and `develop` branches are read-only
 - contributors working on new features should branch from `develop` branch using the `feature/*` naming convention and submit a pull request to merge to `develop`
