@@ -2,25 +2,40 @@
 
 ## Overview
 
-PostgreSQL-based schema to manage e-commerce data transactions.
+PostgreSQL schema for the e-commerce platform, providing tables, seed data and init scripts. Used by the `product-service` and `order-service` services. 
 
 ## Prerequisites
 
-PostgreSQL
-Docker
+- PostgreSQL 14+
+- Docker and Docker Compose (when using containerized deployments)
+
+## Configuration
+
+Use env.example to configure environment variables, making sure to change default values to desired custom configuration
 
 ## Deployment
 
-0. clone repo: `git@github.com:pabloher95/ecommerce_db.git`
+- clone repo: `git@github.com:pabloher95/ecommerce_db.git`
+- copy env template and configure: `cp .env.example .env`
 
-### local
-1. 
+### local deployment
 
-### Docker container
-1. build container from image: 
+- start postgreSQL service: `brew services start postgresql` (on Mac)
+- create database: `createdb ecommerce`
+- run init script: `psql -d ecommerce -f src/init.sql`
+- verify table contents in `ecommerce` db: `psql -d ecommerce -c "\dt"`
 
-## Environment setup
-See env.example for set-up structure.
+### containerized deployment
 
-## Workflow
+- build container: `docker compose down -v && docker-compose up -d`
+- verify table contents in containerized `ecommerce` db: `docker exec -it ecommerce-db psql -U postgres -d ecommerce -c "\dt"`
+
+## Contributions
+
+As per GitFlow standards (see docs/git_flow.md for details):
+
+- `main` and `develop` branches are read-only
+- contributors working on new features should branch from `develop` branch using the `feature/*` naming convention and submit a pull request to merge to `develop`
+- contributors working on packaging releases should branch from `develop` branch using the `release/*` naming convention and submit a pull request to merge to `main` and `develop`
+- contributors working on fixing a bug in live deployment should branch off from `main` branch using the `hotfix/*` naming convention and submit a pull request to merge to `main`
 
