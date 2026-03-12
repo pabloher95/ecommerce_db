@@ -7,7 +7,7 @@ PostgreSQL schema for the e-commerce platform, providing tables, seed data and i
 The schema creates two tables: 
 
 - `products`: product catalog (id, name, price, description) 
-- `orders`: orders with product reference and status 
+- `orders`: orders with product reference and status
 
 ## Prerequisites
 
@@ -31,9 +31,6 @@ Use env.example to configure environment variables, making sure to change defaul
 - verify table contents in `ecommerce` db: `psql -d ecommerce -c "\dt"`
 
 ### containerized deployment
-
-- build container: `docker compose down -v && docker-compose up -d`
-- verify table contents in containerized `ecommerce` db: `docker exec -it ecommerce-db psql -U postgres -d ecommerce -c "\dt"`
 
 ## Contributions
 
