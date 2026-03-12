@@ -39,5 +39,5 @@ As per GitFlow standards (see [docs/git_flow.md](docs/git_flow.md) for details):
 - `main` and `develop` branches are read-only
 - contributors working on new features should branch from `develop` branch using the `feature/*` naming convention and submit a pull request to merge to `develop`
 - contributors working on packaging releases should branch from `develop` branch using the `release/*` naming convention and submit a pull request to merge to `main` and `develop`
-- contributors working on fixing a bug in live deployment should branch off from `main` branch using the `hotfix/*` naming convention and submit a pull request to merge to `main`
+- contributors working on fixing a bug in live deployment should branch off from `main` branch using the `hotfix/*` naming convention and submit a pull request to merge to `main` 
 
